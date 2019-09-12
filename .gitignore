@@ -1,0 +1,6 @@
+modules/web/build/
+modules/core/build/
+deploy/
+.gradle/
+.idea/
+modules/global/build/

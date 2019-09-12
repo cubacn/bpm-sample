@@ -2,6 +2,9 @@ package com.company.bpmsample.web.screens.contract;
 
 import com.haulmont.bpm.entity.ProcAttachment;
 import com.haulmont.bpm.gui.procactionsfragment.ProcActionsFragment;
+import com.haulmont.bpm.service.ProcessFormService;
+import com.haulmont.bpm.service.ProcessRepositoryService;
+import com.haulmont.bpm.service.ProcessRuntimeService;
 import com.haulmont.cuba.gui.app.core.file.FileDownloadHelper;
 import com.haulmont.cuba.gui.components.Table;
 import com.haulmont.cuba.gui.model.CollectionLoader;
@@ -32,7 +35,13 @@ public class ContractEdit extends StandardEditor<Contract> {
     private Table<ProcAttachment> attachmentsTable;
 
     @Inject
+    private ProcessFormService processFormService;
+    @Inject
     private InstanceLoader<Contract> contractDl;
+    @Inject
+    private ProcessRepositoryService processRepositoryService;
+    @Inject
+    private ProcessRuntimeService processRuntimeService;
 
     @Subscribe
     private void onBeforeShow(BeforeShowEvent event) {
