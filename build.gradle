@@ -3,12 +3,15 @@ buildscript {
     ext.cubaVersion = '7.1.0'
     repositories {
         maven {
-            url 'https://dl.bintray.com/cuba-platform/main'
-            
+            url 'https://maven.aliyun.com/nexus/content/groups/public/'
         }
+        maven {
+            url 'https://dl.bintray.com/cuba-platform/main'
+        }
+
         jcenter()
 
-        
+
     }
     dependencies {
         classpath "com.haulmont.gradle:cuba-plugin:$cubaVersion"
@@ -39,7 +42,6 @@ cuba {
 dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
     appComponent("com.haulmont.bpm:bpm-global:$cubaVersion")
-    appComponent('com.haulmont.addon.admintools:cuba-at-global:1.4.0')
 }
 
 def hsql = 'org.hsqldb:hsqldb:2.4.1'
